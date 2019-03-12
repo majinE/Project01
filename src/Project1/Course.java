@@ -26,5 +26,5 @@ public class Course {
                 ", courseLocation='" + courseLocation + '\'' +
                 '}';
     }
-    
+
 }
