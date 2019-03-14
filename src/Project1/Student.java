@@ -1,20 +1,35 @@
 package Project1;
 
+import java.util.HashMap;
+
 public class Student {
 
-    private String studentName;
     private int studentNum;
+    private String studentName;
+    private HashMap<Course, Double> studentCourse = new HashMap<>();
 
-    Student(String studentName, int studentNum) {
-        this.studentName = studentName;
+    Student(int studentNum, String studentName) {
         this.studentNum = studentNum;
+        this.studentName = studentName;
+    }
+
+    public int getStudentNum() {
+        return studentNum;
+    }
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public HashMap<Course, Double> getStudentCourse() {
+        return studentCourse;
     }
 
     @Override
     public String toString() {
         return "Student{" +
-                "studentName='" + studentName + '\'' +
-                ", studentNum=" + studentNum +
+                "studentNum='" + studentNum + '\'' +
+                ", studentName=" + studentName +
                 '}';
     }
 }

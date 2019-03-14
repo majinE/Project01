@@ -9,7 +9,7 @@ public class SchoolDemo3
     Student student1;
 
     System.out.println("===== Read Data =====");
-    SCD.readData("C:\\tmp\\test1.txt");
+    SCD.readData("src\\Project1\\test1.txt");
 
     SCD.assignInstructor (306,200);
     SCD.assignInstructor (205,200);
@@ -25,7 +25,7 @@ public class SchoolDemo3
     SCD.putScore (306, 7777, 100.0);
     SCD.putScore (205, 8888, 50.0);
 
-    System.out.println("\n===== Error Messages =====");   
+    System.out.println("\n===== Error Messages =====");
     SCD.register (205, 9999);
 
     SCD.unRegister (205, 8888);

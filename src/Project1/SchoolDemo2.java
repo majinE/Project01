@@ -8,7 +8,7 @@ public class SchoolDemo2
     Course course1;
 
     System.out.println("===== Read Data =====");
-    SCD.readData("C:\\tmp\\test1.txt");
+    SCD.readData("src\\Project1\\test1.txt");
 
     SCD.addInstructor(700, "E. Tao", "tao@csumb.edu", "777-777-1234");
     SCD.addCourse(300, "CST300 – ProSem", 70, "BIT 110");
@@ -21,8 +21,8 @@ public class SchoolDemo2
     SCD.putScore (306, 7777, 98.54);
     SCD.unRegister (306, 8888);
 
-    
-    System.out.println("\n===== Error Messages =====");   
+
+    System.out.println("\n===== Error Messages =====");
     SCD.addCourse(306, "CST306 – GUI Dev", 25, "BIT 120");
     SCD.putScore (306, 8888, 58.75);
     SCD.register (306, 9999);
