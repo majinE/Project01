@@ -1,3 +1,10 @@
+/**
+ * Title: School.java
+ * Abstract: This is the main school file that manipulates all the other java objects such as instructors, courses, and students.
+ * Author: Edgar Morales Reyes
+ * Date: 3/15/2019
+ */
+
 package Project1;
 
 import java.io.BufferedReader;
@@ -92,7 +99,9 @@ public class School {
         for(Map.Entry mapInstructor : instructors.entrySet()) {
             Integer key = (Integer)mapInstructor.getKey();
             if(instructors.get(key).getEmail().equals(email)){
-                System.out.println(instructors.get(key));
+                System.out.println("Employee Number: " + instructors.get(key).getInstructorNum());
+                System.out.println("Name: " + instructors.get(key).getInstructorName());
+                System.out.println("Phone: " + instructors.get(key).getPhoneNum());
                 return;
             }
         }
@@ -242,9 +251,13 @@ public class School {
         return null;
     }
 
-    Instructor getInstructor(int intructorNum) {
-        if(instructors.containsKey(intructorNum)) {
-            return instructors.get(intructorNum);
+    Instructor getInstructor(int courseNum) {
+        for(Map.Entry mapInstructors : instructors.entrySet()) {
+            Integer key = (Integer) mapInstructors.getKey();
+
+            if(instructors.get(key).getInstructorCourse().containsKey(courseNum)) {
+                return instructors.get(key);
+            }
         }
         System.out.println("Instructor doesn't exist. Returning null object..");
         return null;
@@ -254,7 +267,6 @@ public class School {
         if(students.containsKey(studentNum)) {
             return students.get(studentNum);
         }
-        System.out.println("Student doesn't exist. Returning null object..");
         return null;
     }
 
@@ -263,12 +275,16 @@ public class School {
             System.out.println("Graduation failed - Student does not exist.");
             return;
         }
+        boolean unregistered = false;
         for(Map.Entry mapCourses: courses.entrySet()) {
             Integer key = (Integer) mapCourses.getKey();
             if(courses.get(key).getCourseStudents().containsKey(studentNum)) {
                 unRegister(courses.get(key).getCourseNum(), studentNum);
-                this.students.remove(studentNum);
+                unregistered = true;
             }
+        }
+        if(unregistered ) {
+            this.students.remove(studentNum);
         }
     }
 }

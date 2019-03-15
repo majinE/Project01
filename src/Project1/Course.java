@@ -1,3 +1,11 @@
+/**
+ * Title: Course.java
+ * Abstract: This is the file for the course objects. They utilize two hashmaps consisting of the students enrolled in the
+ *           course and their grades.
+ * Author: Edgar Morales Reyes
+ * Date: 3/15/2019
+ */
+
 package Project1;
 
 import java.util.HashMap;

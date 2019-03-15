@@ -1,6 +1,15 @@
+/**
+ * Title: Instructor.java
+ * Abstract: This java file is used to create new instructors and assign courses to them. A hashmap holds all the
+ *           data for the Course assigned and the key value is the course number.
+ * Author: Edgar Morales Reyes
+ * Date: 3/15/2019
+ */
+
 package Project1;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Instructor {
 
@@ -39,9 +48,14 @@ public class Instructor {
 
     @Override
     public String toString() {
-        return "Employee Number: " + this.instructorNum + '\n' +
+        System.out.print("Instructor Number: " + this.instructorNum + '\n' +
                 "Name: " + this.instructorName + '\n' +
-                "Phone: " + this.phoneNum;
+                "Courses Teaching:\n");
+                for(Map.Entry mapCoursesTeaching : this.instructorCourse.entrySet()) {
+                    Integer key = (Integer) mapCoursesTeaching.getKey();
+                    System.out.print(this.instructorCourse.get(key).getCourseNum() + ": " + this.instructorCourse.get(key).getCurrCapacity() + " enrolled\n");
+                }
+                return "";
     }
 
 }
